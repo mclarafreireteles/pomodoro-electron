@@ -1,0 +1,6 @@
+.time-text {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 96px;
+    color: var(--black-200);
+}
