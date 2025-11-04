@@ -28,6 +28,8 @@ export function ModeToggle({ mode, changeMode }: ModeToggleProps) {
                     color: 'var(--black-200)',
                     backgroundColor: 'var(--white-200)',
                     textTransform: 'none',
+                    minWidth: 120,
+
                     '&:first-of-type': {
                         borderTopLeftRadius: 10,
                         borderBottomLeftRadius: 10,

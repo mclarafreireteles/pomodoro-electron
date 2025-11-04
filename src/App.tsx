@@ -3,6 +3,10 @@ import { usePomodoro } from './hooks/usePomodoro';
 import { Time } from './components/Time/time'
 import { ModeToggle } from './components/ModeToggle';
 
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PauseIcon from '@mui/icons-material/Pause';
+import StopIcon from '@mui/icons-material/Stop';
+
 function App() {
 
   const { time, isActive, mode, start, pause, changeMode  } = usePomodoro()
