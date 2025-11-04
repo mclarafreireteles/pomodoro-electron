@@ -18,3 +18,8 @@ body {
     width: 100vw;
     height: 100vh;
 }
+
+.pomodoro-container-buttons {
+    display: flex;
+    gap: 24px;
+}

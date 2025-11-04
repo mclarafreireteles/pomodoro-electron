@@ -7,9 +7,10 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import PauseIcon from '@mui/icons-material/Pause';
 import StopIcon from '@mui/icons-material/Stop';
 
-function App() {
+import { IconButton } from '@mui/material';
 
-  const { time, isActive, mode, start, pause, changeMode  } = usePomodoro()
+function App() {
+  const { time, isActive, mode, start, pause, changeMode, reset  } = usePomodoro();
 
   return (
     <main className='pomodoro-container'>
@@ -18,11 +19,19 @@ function App() {
         {/* <ThemeToggle/> */}
       </div>
       <Time time={time}/>
-      {/* <ActionBar isActive={isActive}/>  */}
       {!isActive ? (
-          <button onClick={start}>Start</button>
+          <IconButton onClick={start} size='large'>
+            <PlayArrowIcon fontSize='large' />
+          </IconButton>
         ) : (
-          <button onClick={pause}>Pause</button>
+          <div className="pomodoro-container-buttons">
+            <IconButton onClick={pause} size='large'>
+              <PauseIcon fontSize='large' />
+            </IconButton>
+            <IconButton onClick={reset} size='large'>
+              <StopIcon fontSize='large' />
+            </IconButton>
+          </div>
         )}
     </main>
   )
