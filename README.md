@@ -1,68 +1,83 @@
 # Pomodoro Timer (React + Electron + TypeScript)
-
-Objetivo: Desenvolver um aplicativo de timer Pomodoro para desktop.
+#### Objective
+Develop a desktop Pomodoro timer application.
 
 ---
 
-## Requisitos Funcionais
-### RF-01: Ciclo Pomodoro Padrão
-O aplicativo deve operar com três estados de timer:
-- Foco (Pomodoro): 25 minutos.
-- Pausa Curta: 5 minutos.
-- Pausa Longa: 15 minutos.
+## Functional Requirements
+### FR-01: Standard Pomodoro Cycle
 
-### RF-02: Lógica de Ciclo Automático
-O aplicativo deve seguir a lógica Pomodoro padrão
-- Após 1 ciclo de "Foco", iniciar 1 "Pausa Curta".
-- Após 4 ciclos de "Foco", iniciar 1 "Pausa Longa".
-O aplicativo deve alternar automaticamente para o próximo ciclo após o término do atual.
+The application must operate with three timer states:
 
-### RF-03: Controles do Timer
-O usuário deve ter controles claros para:
-- Iniciar: Iniciar o ciclo atual.
-- Pausar/Retomar: Pausar o timer no tempo corrente e retomá-lo.
-- Resetar/Pular: Resetar o timer do ciclo atual ou pular para o próximo ciclo (ex: pular uma pausa).
+- Focus (Pomodoro): 25 minutes
+- Short Break: 5 minutes
+- Long Break: 15 minutes
 
-### RF-04: Notificações
-O aplicativo deve notificar o usuário quando um ciclo terminar.
-- Notificação de Desktop (Electron): Enviar uma notificação nativa do sistema operacional (ex: "Hora da pausa!" ou "Hora de focar!").
-- Alerta Sonoro: Emitir um som de notificação (o som deve ser sutil e moderno).
+### FR-02: Automatic Cycle Logic
 
-### RF-05: Configurações do Usuário
-Deve haver uma área de configurações simples onde o usuário possa:
-- Ajustar a duração (em minutos) dos timers de Foco, Pausa Curta e Pausa Longa.
-- Ativar/Desativar os alertas sonoros.
-- Ativar/Desativar as notificações de desktop.
-- Configurar o número de ciclos de "Foco" antes de uma "Pausa Longa".
+The application must follow the standard Pomodoro logic:
 
-### RF-06: Indicador de Ciclo
-- A interface deve mostrar visualmente quantos ciclos de "Foco" foram concluídos na sessão atual.
+- After 1 "Focus" cycle, start a "Short Break"
+- After 4 "Focus" cycles, start a "Long Break"
 
-### RF-07: Persistência de Configurações
-As configurações definidas pelo usuário devem ser salvas localmente e carregadas quando o aplicativo for reiniciado.
+The application should automatically transition to the next cycle when the current one ends.
 
-## Requisitos Não Funcionais
-### RNF-01: Design e UI:
-A interface deve ser minimalista. O design deve ser o foco principal: limpo, minimalista, moderno, com boa tipografia e espaçamento.
+### FR-03: Timer Controls
 
-### RNF-02: Visualização do Timer
-O timer (MM:SS) deve ser o elemento central e mais visível da tela.
+The user must have clear controls to:
 
-### RNF-03: Tecnologia
-A aplicação deve ser desenvolvida usando Electron como wrapper de desktop e React para a renderização da interface.
+- Start: Begin the current cycle
+- Pause/Resume: Pause the timer and resume from the current time
+- Reset/Skip: Reset the current cycle or skip to the next one (e.g., skip a break)
 
-### RNF-04: Integração com SO (Electron)
-- Ícone na Bandeja (System Tray): O aplicativo deve ter um ícone na bandeja do sistema.
-- Minimizar para Bandeja: Fechar a janela principal deve minimizar o aplicativo para a bandeja, não fechá-lo (o timer continua rodando).
-- Menu de Contexto: Clicar com o botão direito no ícone da bandeja deve exibir um menu simples (ex: "Mostrar App", "Pausar Timer", "Sair").
+### FR-04: Notifications
 
-### RNF-05: Performance
-A aplicação deve ser leve e ter baixo consumo de CPU e memória, especialmente quando minimizada ou rodando em segundo plano.
+The application must notify the user when a cycle ends:
 
-### RNF-06: Janela da Aplicação
-- A janela pode ter um tamanho fixo (não redimensionável) para manter a integridade do design.
-- O aplicativo deve remover o "Menu" padrão do Electron (File, Edit, View...).
-- Adicionar uma opção "Sempre no Topo" (Always-on-Top).
+- Desktop Notification (Electron): Send a native OS notification (e.g., "Break time!" or "Time to focus!")
+- Sound Alert: Play a subtle and modern notification sound
 
-### RNF-07: Plataforma
-O aplicativo deve ser compilável para Windows, macOS e Linux.
+### FR-05: User Settings
+
+There must be a simple settings area where the user can:
+
+- Adjust the duration (in minutes) of Focus, Short Break, and Long Break timers
+- Enable/disable sound alerts
+- Enable/disable desktop notifications
+- Configure the number of "Focus" cycles before a "Long Break"
+
+### FR-06: Cycle Indicator
+The interface must visually display how many "Focus" cycles have been completed in the current session
+
+### FR-07: Settings Persistence
+
+User-defined settings must be saved locally and loaded when the application restarts.
+
+## Non-Functional Requirements
+### NFR-01: Design & UI
+
+The interface must be minimalistic. The design should be the main focus: clean, modern, with good typography and spacing.
+
+### NFR-02: Timer Visualization
+
+The timer (MM:SS) must be the central and most prominent element on the screen.
+
+### NFR-03: Technology
+
+The application must be built using Electron as the desktop wrapper and React for UI rendering.
+
+### NFR-04: OS Integration (Electron)
+System Tray Icon: The application must have a system tray icon
+Minimize to Tray: Closing the main window should minimize the app to the tray instead of exiting (the timer must continue running)
+Context Menu: Right-clicking the tray icon should display a simple menu (e.g., "Show App", "Pause Timer", "Quit")
+### NFR-05: Performance
+
+The application must be lightweight and have low CPU and memory usage, especially when minimized or running in the background.
+
+### NFR-06: Application Window
+The window may have a fixed size (non-resizable) to preserve design consistency
+Remove the default Electron menu (File, Edit, View, etc.)
+Include an "Always on Top" option
+### NFR-07: Platform
+
+The application must be buildable for Windows, macOS, and Linux.
